@@ -86,7 +86,7 @@ function createRoute(section: string, sectionId: string) {
     ],
     bootstrap: [AppComponent]
 })
-export class AppModule {
+export class WebSiteModule {
 }
 
 
