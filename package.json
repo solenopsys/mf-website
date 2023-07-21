@@ -1,5 +1,5 @@
 {
-  "name": "@solenopsys/fl-website",
+  "name": "@solenopsys/mf-website",
   "version": "0.1.0",
   "scripts": {
     "build": "xs-pack"
