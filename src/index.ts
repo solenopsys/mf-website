@@ -1,6 +1,12 @@
-import {RemoteEntryModule} from "@solenopsys/mf-microfonds";
+
 
 export * from './lib/web-site.module';
 export * from './lib/app.component';
 
-export const MICRO=RemoteEntryModule;
+import {XsModule, XsModuleType} from "@solenopsys/fl-globals";
+import {WebSiteModule} from "./lib/web-site.module";
+
+export const ENTRY: XsModule<WebSiteModule> = {
+    module: WebSiteModule,
+    type: XsModuleType.LAYOUT,
+};
