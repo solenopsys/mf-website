@@ -7,8 +7,7 @@ import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {TextGroupByPatchResolver, TextPageGroupComponent} from "@solenopsys/ui-publications";
-import {LeftMenuLayoutComponent} from "./left-menu-layout/left-menu-layout.component";
-import {BaseLayoutComponent} from "./base-layout/base-layout.component";
+
 import {MenuItemData, UINavigateModule} from "@solenopsys/ui-navigate";
 import {UIFormsModule} from "@solenopsys/ui-forms";
 import {MainPageComponent,  UITemplatesModule} from "@solenopsys/ui-templates";
@@ -58,25 +57,25 @@ export function AllowedEntitiesGuard(allowedEntities: string[]): CanActivateFn {
 }
 
 function createRoute(section: string, sectionId: string) {
-    return {
-        path: section,
-        component: LeftMenuLayoutComponent, children: [{
-            path: "**",
-            component: TextPageGroupComponent, resolve: {
-                groups: TextGroupByPatchResolver
-            },
-            data: {rootId: sectionId}
-        }
-        ],
-        data: {rootId: sectionId}
-    };
+    // return {
+    //     path: section,
+    //     // component: LeftMenuLayoutComponent, children: [{
+    //     //     path: "**",
+    //     //     component: TextPageGroupComponent, resolve: {
+    //     //         groups: TextGroupByPatchResolver
+    //     //     },
+    //     //     data: {rootId: sectionId}
+    //     // }
+    //     ],
+    //     data: {rootId: sectionId}
+    // };
 }
 
 @NgModule({
     declarations: [
         AppComponent,
-        LeftMenuLayoutComponent,
-        BaseLayoutComponent,
+        // LeftMenuLayoutComponent,
+        // BaseLayoutComponent,
     ],
     imports: [
         HttpClientModule,
@@ -87,7 +86,7 @@ function createRoute(section: string, sectionId: string) {
         RouterModule.forRoot([
             {
                 path: "",
-                component: BaseLayoutComponent,
+              //  component: BaseLayoutComponent,
                 children: [{
                     path: "",
                     component: MainPageComponent
