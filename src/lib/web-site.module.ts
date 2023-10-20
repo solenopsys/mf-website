@@ -57,18 +57,18 @@ export function AllowedEntitiesGuard(allowedEntities: string[]): CanActivateFn {
 }
 
 function createRoute(section: string, sectionId: string) {
-    // return {
-    //     path: section,
-    //     // component: LeftMenuLayoutComponent, children: [{
-    //     //     path: "**",
-    //     //     component: TextPageGroupComponent, resolve: {
-    //     //         groups: TextGroupByPatchResolver
-    //     //     },
-    //     //     data: {rootId: sectionId}
-    //     // }
-    //     ],
-    //     data: {rootId: sectionId}
-    // };
+    return {
+        path: section,
+        // component: LeftMenuLayoutComponent, children: [{
+        //     path: "**",
+            component: TextPageGroupComponent, resolve: {
+                groups: TextGroupByPatchResolver
+            },
+        //     data: {rootId: sectionId}
+        // }
+       // ],
+        data: {rootId: sectionId}
+    };
 }
 
 @NgModule({
